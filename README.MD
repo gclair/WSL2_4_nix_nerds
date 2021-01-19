@@ -3,10 +3,15 @@ A quickstart guide to getting Debian in WSL2 to an acceptable working state.
 
 ## Pre-requisites
   * Windows 10 (min: xxxxx)
-  * Fonts 
-  ** Apple's SF Mono Powerline (https://github.com/Twixes/SF-Mono-Powerline)
-  ** Microsoft's Cascadia Code Powerline (https://github.com/microsoft/cascadia-code/releases)
+  * Windows Terminal : https://docs.microsoft.com/en-us/windows/terminal/get-started
+    * Alternatively better powerline/Unicode/Colour support: WSLTTY https://github.com/mintty/wsltty 
+    
+  * TTF Fonts: 
+    * Apple's SF Mono Powerline (https://github.com/Twixes/SF-Mono-Powerline)
+    * Microsoft's Cascadia Code Powerline (https://github.com/microsoft/cascadia-code/releases)
   
   
 ## References
   * https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup
+  * https://www.aaron-powell.com/posts/2020-04-24-a-walk-through-of-my-terminal-setup/
+  * https://www.aaron-powell.com/posts/2020-03-25-how-i-setup-a-windows-dev-environment/
