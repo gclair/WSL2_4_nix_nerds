@@ -9,7 +9,12 @@ A quickstart guide to getting Debian in WSL2 to an acceptable working state.
   * TTF Fonts: 
     * Apple's SF Mono Powerline (https://github.com/Twixes/SF-Mono-Powerline)
     * Microsoft's Cascadia Code Powerline (https://github.com/microsoft/cascadia-code/releases)
-  
+ 
+## Install WSL2
+  Really just follow the steps (https://docs.microsoft.com/en-us/windows/wsl/about), but here's the quick and easy ones I used:
+
+
+## Post-Install (the stuff you're here for)
   
 ## References
   * https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup
