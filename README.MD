@@ -2,7 +2,7 @@
 A quickstart guide to getting Debian in WSL2 to an acceptable working state.
 
 ## Pre-requisites
-  * Windows 10 (min: xxxxx)
+  * Windows 10 (WSL 2 is only available in Windows 10, Version 1903, Build 18362 )
   * Windows Terminal : https://docs.microsoft.com/en-us/windows/terminal/get-started
     * Alternatively better powerline/Unicode/Colour support: WSLTTY https://github.com/mintty/wsltty 
     
