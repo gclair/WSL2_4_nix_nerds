@@ -11,12 +11,20 @@ A quickstart guide to getting Debian in WSL2 to an acceptable working state.
     * Microsoft's Cascadia Code Powerline (https://github.com/microsoft/cascadia-code/releases)
  
 ## Install WSL2
-  Really just follow the steps (https://docs.microsoft.com/en-us/windows/wsl/about), but here's the quick and easy ones I used:
+  Really just follow the steps (https://docs.microsoft.com/en-us/windows/wsl/install-win10), but here's the quick and easy ones I used:
+  In PowerShell as Administrator
+  * `dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
+  * `dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart`
+  * Reboot
+  * Download && install : https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+  
 
 
 ## Post-Install (the stuff you're here for)
   
 ## References
+  * https://docs.microsoft.com/en-us/windows/wsl/
   * https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup
   * https://www.aaron-powell.com/posts/2020-04-24-a-walk-through-of-my-terminal-setup/
   * https://www.aaron-powell.com/posts/2020-03-25-how-i-setup-a-windows-dev-environment/
+  
