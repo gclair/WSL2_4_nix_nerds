@@ -2,12 +2,14 @@
 A quickstart guide to getting Debian in WSL2 to an acceptable working state. If you have VMWare Workstation, Docker For Windows, or VirtualBox the "VirtualMachinePlatform" feature may affect them by not allowing you to start up the VMs. 
 
 ## Pre-requisites
-  * Windows 10 (WSL 2 is only available in Windows 10, Version 1903, Build 18362, WSL 1 for earlier versions )
+  * Windows 10 (WSL 2 is only available in Windows 10, Version 1903, Build 18362, WSL 1 for earlier versions)
+  * Chocolately - Windows [package manager](https://chocolatey.org/)
   * Windows Terminal : https://docs.microsoft.com/en-us/windows/terminal/get-started
     * Alternatively better powerline/Unicode/Colour support: WSLTTY https://github.com/mintty/wsltty 
   * TrueType Fonts (TTF): 
     * Apple's SF Mono Powerline (https://github.com/Twixes/SF-Mono-Powerline)
     * Microsoft's Cascadia Code Powerline (https://github.com/microsoft/cascadia-code/releases)
+    * Cascadia Code NerdFont (get with chocolately) - `choco install cascadia-code-nerd-font`
  
 ## Install WSL2
   Really just follow the steps (https://docs.microsoft.com/en-us/windows/wsl/install-win10), but here's the quick and easy ones I used:
@@ -20,6 +22,7 @@ A quickstart guide to getting Debian in WSL2 to an acceptable working state. If 
   * Install your preferred distro from the [MS Store](https://aka.ms/wslstore)
 
 ## Post-Install (the stuff you're here for)
+  * VSCode On Windows (Trust me!) - `choco install vscode`
   
 ## References
   * https://docs.microsoft.com/en-us/windows/wsl/
