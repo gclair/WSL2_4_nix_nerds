@@ -29,5 +29,5 @@ A quickstart guide to getting Debian in WSL2 to an acceptable working state. If 
   * https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup
   * https://www.aaron-powell.com/posts/2020-04-24-a-walk-through-of-my-terminal-setup/
   * https://www.aaron-powell.com/posts/2020-03-25-how-i-setup-a-windows-dev-environment/
-  * https://youtu.be/j0PPcUUtHlw <- Explanation of WSL1 vs WSL2, tips and tricks and making things pretty {#ConvertingMacOSUser}
+  * https://youtu.be/j0PPcUUtHlw <- Explanation of WSL1 vs WSL2, tips and tricks and making things pretty<a id="ConvertingMacOSUser"></a>
   
