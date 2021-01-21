@@ -22,12 +22,11 @@ A quickstart guide to getting Debian in WSL2 to an acceptable working state. If 
   * Install your preferred distro from the [MS Store](https://aka.ms/wslstore)
 
 ## Post-Install (the stuff you're here for)
-  * VSCode On Windows ( [proof in pudding](#ConvertingMacOSUser) ) - `choco install vscode`
+  * VSCode On Windows ( proof in pudding [^5] ) - `choco install vscode`
   
 ## References
   * https://docs.microsoft.com/en-us/windows/wsl/
   * https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup
   * https://www.aaron-powell.com/posts/2020-04-24-a-walk-through-of-my-terminal-setup/
   * https://www.aaron-powell.com/posts/2020-03-25-how-i-setup-a-windows-dev-environment/
-  * https://youtu.be/j0PPcUUtHlw <- Explanation of WSL1 vs WSL2, tips and tricks and making things pretty<a id="ConvertingMacOSUser"></a>
-  
+  * [^5] https://youtu.be/j0PPcUUtHlw <- Explanation of WSL1 vs WSL2, tips and tricks and making things pretty
