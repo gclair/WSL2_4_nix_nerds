@@ -97,7 +97,11 @@ HOSTNAME is not set in WSL2, so if you don't change it often, hardcoding it will
     `set -g default-terminal "xterm-256color"` or to `"screen-256color"`. The xterm-256color seems to work for me.
 
    ## Cut and Paste
-   ***WIP***  Tmux settings, copy to OS clipboard via ` | clip.exe`
+   When I installed `powerlevel10k` and configured it `p10k configure`, the tmux it has is very clever and includes cut and paste to the OS clipboard.
+```
+    if -b 'command -v clip.exe > /dev/null 2>&1' 'bind y run -b "tmux save-buffer - | clip.exe"'
+    if -b '[ -c /dev/clipboard ]' 'bind y run -b "tmux save-buffer - > /dev/clipboard"'
+```
 
 
 # Controlling your instances
