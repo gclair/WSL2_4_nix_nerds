@@ -66,9 +66,20 @@ generateResolvConf = false
 ```
   * Restart your Debian instance (Powershell): wsl -t Debian, launch WT Debian instance
   * Fix resolv.conf (should no longer be updating): `sudo rm /etc/resolv.conf && sudo echo nameserver 8.8.4.4 >/etc/resolv.conf` - Yes its Google's NS, but i have flaky issues with Cloudflare it seems. 
-  * Debian doesn't install `man` by default or other useful packages:  `sudo apt update && sudo apt install dnsutils vim man curl wget zsh git build-essential` 
+  * Debian doesn't install `man` by default or other useful packages:  `sudo apt update && sudo apt install keychain dnsutils vim man curl wget zsh git build-essential` 
   * [Homebrew on Linux](https://brew.sh/) - I find distribution repos don't necessarily have all the up to date/best versions of software. Brew won't install until you fix your networking and get curl or wget installed. Add brew and its packages to your $PATH : `/home/linuxbrew/.linuxbrew/bin`
   * **FUN FACT** You can launch your Windows Executables from here. Try it! If you have VSCode in Windows just run `code`. It will launch the Windows version of code that recognizes WSL! See the YouTube link in the references. For fun, hack yourself! `calc.exe` ..  Yes its a joke. 
+
+# SSH Agent
+The accepted way to use SSH-agent and keep your sessions configured via tmux seems to be `keychain`. 
+
+Added to my `.zshrc`:
+```
+/usr/bin/keychain --nogui $HOME/.ssh/<MY_SSH_PRIVKEY>
+source $HOME/.keychain/<YOURHOSTNAME>-sh
+```
+
+HOSTNAME is not set in WSL2, so if you don't change it often, hardcoding it will be fine.
 
 # ZSH
 * Switch to zsh: `chsh -s /bin/zsh <yourusername>` , restart WT session.
