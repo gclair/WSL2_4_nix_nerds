@@ -75,8 +75,9 @@ The accepted way to use SSH-agent and keep your sessions configured via tmux see
 
 Added to my `.zshrc`:
 ```
+HOSTNAME=`hostname`
 /usr/bin/keychain --nogui $HOME/.ssh/<MY_SSH_PRIVKEY>
-source $HOME/.keychain/<YOURHOSTNAME>-sh
+source $HOME/.keychain/$HOSTNAME-sh
 ```
 
 HOSTNAME is not set in WSL2, so if you don't change it often, hardcoding it will be fine.
