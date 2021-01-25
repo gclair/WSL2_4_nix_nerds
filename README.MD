@@ -1,5 +1,5 @@
 ##### Table of Contents
-- [WSL2_4_nix_nerds - Introduction](#wsl2_4_nix_nerds---introduction)
+- [WSL2_4_Nix_Nerds - Introduction](#wsl2_4_nix_nerds---introduction)
   - [Pre-requisites](#pre-requisites)
   - [Install WSL2](#install-wsl2)
   - [Post-Install (the stuff you're here for)](#post-install-the-stuff-youre-here-for)
@@ -14,7 +14,7 @@
   - [Controlling your instances](#controlling-your-instances)
   - [References](#references)
 
-# WSL2_4_nix_nerds - Introduction
+# WSL2_4_Nix_Nerds - Introduction
 A quickstart guide to getting Debian in WSL2 to an acceptable working state. If you have VMWare Workstation, Docker For Windows, or VirtualBox then the "VirtualMachinePlatform" feature ***MAY*** affect them by not allowing you to start up the VMs you have already built as this is run via Hyper-V. See [FAQ](https://docs.microsoft.com/en-us/windows/wsl/wsl2-faq#will-i-be-able-to-run-wsl-2-and-other-3rd-party-virtualization-tools-such-as-vmware-or-virtualbox)
 
 ## Pre-requisites
