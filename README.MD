@@ -22,8 +22,9 @@ A quickstart guide to getting Debian in WSL2 to an acceptable working state. If 
   * Chocolately - Windows [package manager](https://chocolatey.org/install) which runs in Powershell (as Administrator). Its not necessary but will make finding and installing packages easier. 
   * Windows Terminal : https://docs.microsoft.com/en-us/windows/terminal/get-started
     * Possibly a better powerline/Unicode/Colour support (I have not tested this yet): WSLTTY https://github.com/mintty/wsltty 
-  * TrueType Fonts (TTF): 
-    * ***Recommended*** Cascadia Code NerdFont (Makes text look awesome) - `choco install cascadia-code-nerd-font` 
+  * TrueType Fonts (TTF):
+    * ***Recommended*** MesloLGS Font from the [PowerLevel10K](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k) is my new best friend.
+    * Just as good, Cascadia Code NerdFont (Makes text look awesome) - `choco install cascadia-code-nerd-font` 
     * Microsoft's Cascadia Code Powerline (https://github.com/microsoft/cascadia-code/releases)
 
 # Install WSL2
