@@ -89,7 +89,7 @@ HOSTNAME is not set in WSL2, so if you don't change it often, hardcoding it will
  I like the usage of plugins with ZSH using [Oh My Zsh!](https://ohmyz.sh/) and [Powerlevel10k](https://github.com/romkatv/powerlevel10k) which really exercise those NerdFonts well. They recommend using the [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k).   
 
 # VIM
- I am a user of [SpaceVim](https://spacevim.org). It looks pretty and works relatively well for me. I didn't have to do many changes here. If you're an experienced dev, you have all your customizations in your github ready to go. I however, no not `¯\_(ツ)_/¯`
+ I am a user of [SpaceVim](https://spacevim.org). It looks pretty and works relatively well for me. I didn't have to do many changes here. If you're an experienced dev, you have all your customizations in your github ready to go. I, however, do not `¯\_(ツ)_/¯`
 
 # Tmux
   This needs a section all its own, but if you got this far you know what you're doing.
@@ -98,7 +98,7 @@ HOSTNAME is not set in WSL2, so if you don't change it often, hardcoding it will
     `set -g default-terminal "xterm-256color"` or to `"screen-256color"`. The xterm-256color seems to work for me.
 
    ## Cut and Paste
-   When I installed `powerlevel10k` and configured it with `p10k configure`, the tmux.conf is configurues is very clever and includes cut and paste to the OS clipboard.
+   When I installed `powerlevel10k` and configured it with `p10k configure`, the tmux.conf is cleverly configured to include cut and paste via the OS clipboard.
 ```
     if -b 'command -v clip.exe > /dev/null 2>&1' 'bind y run -b "tmux save-buffer - | clip.exe"'
     if -b '[ -c /dev/clipboard ]' 'bind y run -b "tmux save-buffer - > /dev/clipboard"'
