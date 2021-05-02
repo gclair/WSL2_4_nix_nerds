@@ -107,7 +107,6 @@ HOSTNAME is not set in WSL2, so if you don't change it often, hardcoding it will
     if -b '[ -c /dev/clipboard ]' 'bind y run -b "tmux save-buffer - > /dev/clipboard"'
 ```
 
-
 # Controlling your instances
   * Instances are managed via powershell (admin) with `wsl`.
   * `wsl --list --verbose` OR `wsl -l -v` : list your installed instances
@@ -116,9 +115,16 @@ HOSTNAME is not set in WSL2, so if you don't change it often, hardcoding it will
   * I've never had to start the WSL2 instance as this is done automatically when you start Windows Terminal *nix instance.
 
 # Issues and fixes
-  1. Issue: `Error 0x80370102 The Virtual machine could not be started because a required feature is not installed`
-    - Fix: "Is virtualization enabled in your BIOS? That could be a quick fix - https://github.com/MicrosoftDocs/WSL/issues/436"
-    - Check: PSCmdlet:(gcim Win32_ComputerSystem).HypervisorPresent - See #references for other methods
+  - Issue: `Error 0x80370102 The Virtual machine could not be started because a required feature is not installed`
+     - Fix: "Is virtualization enabled in your BIOS? That could be a quick fix - https://github.com/MicrosoftDocs/WSL/issues/436"
+     - Check: PSCmdlet:(gcim Win32_ComputerSystem).HypervisorPresent - See [References](#references) for other methods
+     - ![GCIM Check Before](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/CheckHWVirtSupport-GCIM-Before.png)
+     - ![GCIM Check After](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/CheckHWVirtSupport-GCIM-After.png)
+     - ![Easy check Before](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/CheckHWVirtSupport-WMI_ComputerSystem-Before.png)
+     - ![Easy check After](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/CheckHWVirtSupport-WMI_ComputerSystem-After.png)
+   - If you suspend or sleep the host a fair amount, your Linux clock will go out of sync often.
+     - Regular Fix: *Beta* Linux Kernel 5.10 for WSL will fix this, not yet out of Beta and you have to compile yourself. Ew.
+     - Manual Fix: I forget, will have to find what I used to do this and will make a link.
   
 # References
   * https://docs.microsoft.com/en-us/windows/wsl/
