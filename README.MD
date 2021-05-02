@@ -12,7 +12,7 @@
   - [Terminal Setting](#terminal-setting)
   - [Cut and Paste](#cut-and-paste)
 - [Controlling your instances](#controlling-your-instances)
-- [Issues and Fixes](#Issues-and-fixes)
+- [Issues and Fixes](#issues-and-fixes)
 - [References](#references)
 
 # WSL2_4_Nix_Nerds - Introduction
