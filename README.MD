@@ -19,6 +19,7 @@
 A quickstart guide to getting Debian in WSL2 to an acceptable working state. If you have VMWare Workstation, Docker For Windows, or VirtualBox then the "VirtualMachinePlatform" feature ***MAY*** affect them by not allowing you to start up the VMs you have already built as this is run via Hyper-V. See [FAQ](https://docs.microsoft.com/en-us/windows/wsl/wsl2-faq#will-i-be-able-to-run-wsl-2-and-other-3rd-party-virtualization-tools-such-as-vmware-or-virtualbox)
 
 # Pre-requisites
+  * Enable hardware virtualization support in your BIOS - PS cmdlet: `(gcim Win32_ComputerSystem).HypervisorPresent` - False == not enabled.
   * Windows 10 (WSL 2 is only available in Windows 10, Version 1903, Build 18362, WSL 1 for earlier versions)
   * Chocolately - Windows [package manager](https://chocolatey.org/install) which runs in Powershell (as Administrator). Its not necessary but will make finding and installing packages easier. 
   * Windows Terminal : https://docs.microsoft.com/en-us/windows/terminal/get-started
@@ -117,6 +118,7 @@ HOSTNAME is not set in WSL2, so if you don't change it often, hardcoding it will
 # Issues and fixes
   1. Issue: `Error 0x80370102 The Virtual machine could not be started because a required feature is not installed`
     - Fix: "Is virtualization enabled in your BIOS? That could be a quick fix - https://github.com/MicrosoftDocs/WSL/issues/436"
+    - Check: PSCmdlet:(gcim Win32_ComputerSystem).HypervisorPresent - See #references for other methods
   
 # References
   * https://docs.microsoft.com/en-us/windows/wsl/
@@ -124,3 +126,5 @@ HOSTNAME is not set in WSL2, so if you don't change it often, hardcoding it will
   * https://www.aaron-powell.com/posts/2020-04-24-a-walk-through-of-my-terminal-setup/
   * https://www.aaron-powell.com/posts/2020-03-25-how-i-setup-a-windows-dev-environment/
   * https://youtu.be/j0PPcUUtHlw <- Explanation of WSL1 vs WSL2, tips and tricks and making things pretty and functional.
+  * Is Virtualization support enabled in your BIOS - https://devblogs.microsoft.com/scripting/use-powershell-to-detect-if-hypervisor-is-present/
+  
