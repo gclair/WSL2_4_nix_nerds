@@ -12,6 +12,7 @@
   - [Terminal Setting](#terminal-setting)
   - [Cut and Paste](#cut-and-paste)
 - [Controlling your instances](#controlling-your-instances)
+- [Issues and Fixes](#Issues-and-fixes)
 - [References](#references)
 
 # WSL2_4_Nix_Nerds - Introduction
@@ -38,6 +39,7 @@ A quickstart guide to getting Debian in WSL2 to an acceptable working state. If 
   * Install your preferred distro from the [MS Store](https://aka.ms/wslstore)
   * Run your installation and go through the install and initialization steps, username and password
   * (Optional) VSCode On Windows (PowerShell as Administrator) - `choco install vscode`
+  * Run your Linux install for the first time via the Start Menu to launch and configure the instance. Cannot be seen from the Windows Terminal as a launch option until this is done.
   
 # Post-Install (the stuff you're here for)
  ## Windows Terminal (WT) Settings
@@ -48,7 +50,7 @@ A quickstart guide to getting Debian in WSL2 to an acceptable working state. If 
 Two ways to alter what your default profile will be. Right now it will launch PowerShell for you. To set it to Debian, from within PowerShell `wsl -s Debian`. You can also set the `"defaultProfile"` attribute to the GUID value of the Unix install from within the Settings json configuration file. Altering the order of the profile list will alter the order of your shell choices when you right click the WT icon.
 
   ###  My WT Settings 
-  * Launch your Debian instance via right-click on the Windows Terminal icon and choosing your Debian instance
+  * Launch your Debian instance via right-click on the Windows Terminal icon and choosing your Debian instance, *IF* you have launched it already for the first time.
   * Choose your font, font size, and set your default start directory will be the `c:\users\<username>\` directory. If you perfer good old fashioned `/home/<username>` then set it as per below. There are different ways fonts could be installed, either via `choco` or manually downloaded from [Nerd Fonts](https://www.nerdfonts.com). Make sure you have the correct font name by using the "Font" tool in the Start menu. You can put these in the `"default"` section of the `"profiles"`, or per profile. These examples are per profile and in the `"name":"Debian"` profile for myself. Order of attributes doesn't seem to matter. 
 ```
       "startingDirectory": "//wsl$//Debian//home//gclair",
@@ -111,6 +113,10 @@ HOSTNAME is not set in WSL2, so if you don't change it often, hardcoding it will
   * `wsl -s Debian` : Set your default distribution to start to the named "Debian" distro.
   * `wsl -t Debian` : Terminate the instance. Sometimes this is the 'reset' button you need 
   * I've never had to start the WSL2 instance as this is done automatically when you start Windows Terminal *nix instance.
+
+# Issues and fixes
+  1. Issue: `Error 0x80370102 The Virtual machine could not be started because a required feature is not installed`
+    - Fix: "Is virtualization enabled in your BIOS? That could be a quick fix - https://github.com/MicrosoftDocs/WSL/issues/436"
   
 # References
   * https://docs.microsoft.com/en-us/windows/wsl/
