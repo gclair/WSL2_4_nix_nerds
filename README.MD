@@ -51,7 +51,8 @@ A quickstart guide to getting Debian in WSL2 to an acceptable working state. If 
 Two ways to alter what your default profile will be. Right now it will launch PowerShell for you. To set it to Debian, from within PowerShell `wsl -s Debian`. You can also set the `"defaultProfile"` attribute to the GUID value of the Unix install from within the Settings json configuration file. Altering the order of the profile list will alter the order of your shell choices when you right click the WT icon.
 
   ###  My WT Settings 
-  * Launch your Debian instance via right-click on the Windows Terminal icon and choosing your Debian instance, *IF* you have launched it already for the first time.
+  * Launch your Debian instance via right-click on the Windows Terminal icon and choosing your Debian instance, *IF* you have launched it already for the first time. If you haven't, this won't show up as a launch item until you do it.
+  * `Ctrl-,` - Newer versions of Windows Terminal now has a built in GUI for configurations and you won't have to mess with the JSON unless you want to get super fancy. ![WindowsTerminalGUI](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/WindowsTerminalConfiguration.png)
   * Choose your font, font size, and set your default start directory will be the `c:\users\<username>\` directory. If you perfer good old fashioned `/home/<username>` then set it as per below. There are different ways fonts could be installed, either via `choco` or manually downloaded from [Nerd Fonts](https://www.nerdfonts.com). Make sure you have the correct font name by using the "Font" tool in the Start menu. You can put these in the `"default"` section of the `"profiles"`, or per profile. These examples are per profile and in the `"name":"Debian"` profile for myself. Order of attributes doesn't seem to matter. 
 ```
       "startingDirectory": "//wsl$//Debian//home//gclair",
@@ -117,11 +118,11 @@ HOSTNAME is not set in WSL2, so if you don't change it often, hardcoding it will
 # Issues and fixes
   - Issue: `Error 0x80370102 The Virtual machine could not be started because a required feature is not installed`
      - Fix: "Is virtualization enabled in your BIOS? That could be a quick fix - https://github.com/MicrosoftDocs/WSL/issues/436"
-     - Check: PSCmdlet:(gcim Win32_ComputerSystem).HypervisorPresent - See [References](#references) for other methods
-     - ![GCIM Check Before](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/CheckHWVirtSupport-GCIM-Before.png)
-     - ![GCIM Check After](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/CheckHWVirtSupport-GCIM-After.png)
-     - ![Easy check Before](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/CheckHWVirtSupport-WMI_ComputerSystem-Before.png)
-     - ![Easy check After](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/CheckHWVirtSupport-WMI_ComputerSystem-After.png)
+     - Easy Check-PSCmdlet:`(gcim Win32_ComputerSystem).HypervisorPresent` - See [References](#references) for other methods
+     - GCIM Before: ![GCIM Check Before](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/CheckHWVirtSupport-GCIM-Before.png)
+     - GCIM After: ![GCIM Check After](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/CheckHWVirtSupport-GCIM-After.png)
+     - Easy method before: ![Easy check Before](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/CheckHWVirtSupport-WMI_ComputerSystem-Before.png)
+     - Easy method after: ![Easy check After](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/CheckHWVirtSupport-WMI_ComputerSystem-After.png)
    - If you suspend or sleep the host a fair amount, your Linux clock will go out of sync often.
      - Regular Fix: *Beta* Linux Kernel 5.10 for WSL will fix this, not yet out of Beta and you have to compile yourself. Ew.
      - Manual Fix: I forget, will have to find what I used to do this and will make a link.
