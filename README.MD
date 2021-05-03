@@ -1,3 +1,5 @@
+### Updated: May 05, 2021
+
 ##### Table of Contents
 - [WSL2_4_Nix_Nerds - Introduction](#wsl2_4_nix_nerds---introduction)
 - [Pre-requisites](#pre-requisites)
@@ -59,6 +61,9 @@ Three ways to alter what your default profile will be. The default launch type i
 
   ###  My WT Settings 
   * Launch your Debian instance via right-click on the Windows Terminal icon and choosing your Debian instance, *IF* you have launched it already for the first time. If you haven't, this won't show up as a launch item until you do it. Clever method, I wonder why and how WT detects this.
+  * 
+  * GUI is pretty straightforward now, and everything you want will be there. Look and Feel items will be set per profile, fonts, colours, opacity, background images, etc. ![WT look and feel example](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/WT-Profile-Look-n-Feel.png)
+
   * Choose your font, font size, and set your default start directory. The Default will be the `c:\users\<username>\` directory, I don't care for it. If you perfer good old fashioned `/home/<username>` then set it as per below. There are different ways fonts could be installed, either via `choco` or manually downloaded from [Nerd Fonts](https://www.nerdfonts.com). Make sure you have the correct font name by using the "Font" tool in the Start menu. You can put these in the `"default"` section of the `"profiles"`, or per profile. These examples are per profile and in the `"name":"Debian"` profile for myself. Order of attributes doesn't seem to matter. 
 ```
       "startingDirectory": "//wsl$//Debian//home//gclair",
