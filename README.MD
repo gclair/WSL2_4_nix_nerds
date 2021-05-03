@@ -49,7 +49,7 @@ A quickstart guide to getting Debian in WSL2 to an acceptable working state. If 
 # Post-Install (the stuff you're here for)
  ## Windows Terminal (WT) Settings
   * WT Settings - Can be reached via Windows Terminal Settings, `Ctrl+,` or click on the down chevron next to the `+` symbol in the tabline. Newer versions of Windows Terminal now have a GUI, older versions will launch an editor for .json files. If you haven't configured an editor for `.json` files, it will ask you for one. I'm using VSCode. ![WT GUI Examples](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/WindowsTerminalConfiguration.png)
-  * See the [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/global-settings) page for detailed customization options. This is where behaviour and look and feel (background images, transparency etc) are defined. The GUI doesn't show ALL options, so you may have to edit via JSON to change certain items such as the font.
+  * See the [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/global-settings) page for detailed customization options. This is where behaviour and look and feel (background images, transparency etc) are defined. The GUI doesn't seem to show all options, so you may have to edit via JSON to change certain items. Most of the ones you will want to play with seem to be in the GUI though.
   * Useful trick: If you have Windows Terminal running and while you have the configuration file open, when you save settings, Terminal will reload them right away and you can see what effect you've had on it right away.
 
 Three ways to alter what your default profile will be. The default launch type is PowerShell. Example: To set it to Debian:
