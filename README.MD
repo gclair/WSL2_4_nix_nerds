@@ -19,8 +19,12 @@
 A quickstart guide to getting Debian in WSL2 to an acceptable working state. If you have VMWare Workstation, Docker For Windows, or VirtualBox then the "VirtualMachinePlatform" feature ***MAY*** affect them by not allowing you to start up the VMs you have already built as this is run via Hyper-V. See [FAQ](https://docs.microsoft.com/en-us/windows/wsl/wsl2-faq#will-i-be-able-to-run-wsl-2-and-other-3rd-party-virtualization-tools-such-as-vmware-or-virtualbox)
 
 # Pre-requisites
-  * Enable hardware virtualization support in your BIOS - PS cmdlet: `(gcim Win32_ComputerSystem).HypervisorPresent` - False == not enabled.
+  * Enable hardware virtualization support in your BIOS
+    * PS cmdlet: `(gcim Win32_ComputerSystem).HypervisorPresent`
+    * False == not enabled.
   * Windows 10 (WSL 2 is only available in Windows 10, Version 1903, Build 18362, WSL 1 for earlier versions)
+    * PS cmdlet: `[environment]::OSVersion.Version`
+    * ![Powershell Windows Version](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/WindowsVersion-PowerShell.png)
   * Chocolately - Windows [package manager](https://chocolatey.org/install) which runs in Powershell (as Administrator). Its not necessary but will make finding and installing packages easier. 
   * Windows Terminal : https://docs.microsoft.com/en-us/windows/terminal/get-started
     * Possibly a better powerline/Unicode/Colour support (I have not tested this yet): WSLTTY https://github.com/mintty/wsltty 
@@ -44,16 +48,15 @@ A quickstart guide to getting Debian in WSL2 to an acceptable working state. If 
   
 # Post-Install (the stuff you're here for)
  ## Windows Terminal (WT) Settings
-  * WT Settings - Can be reached via Windows Terminal Settings, `Ctrl+,` or click on the down chevron next to the `+` symbol in the tabline. If you haven't configured an editor for `.json` files, it will ask you for one. I'm using VSCode.
-  * See the [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/global-settings) page for detailed customization options. This is where behaviour and look and feel (background images, transparency etc) are defined.
+  * WT Settings - Can be reached via Windows Terminal Settings, `Ctrl+,` or click on the down chevron next to the `+` symbol in the tabline. Newer versions of Windows Terminal now have a GUI, older versions will launch an editor for .json files. If you haven't configured an editor for `.json` files, it will ask you for one. I'm using VSCode. ![WT GUI Examples](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/WindowsTerminalConfiguration.png)
+  * See the [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/global-settings) page for detailed customization options. This is where behaviour and look and feel (background images, transparency etc) are defined. The GUI doesn't show ALL options, so you may have to edit via JSON to change certain items such as the font.
   * Useful trick: If you have Windows Terminal running and while you have the configuration file open, when you save settings, Terminal will reload them right away and you can see what effect you've had on it right away.
 
-Two ways to alter what your default profile will be. Right now it will launch PowerShell for you. To set it to Debian, from within PowerShell `wsl -s Debian`. You can also set the `"defaultProfile"` attribute to the GUID value of the Unix install from within the Settings json configuration file. Altering the order of the profile list will alter the order of your shell choices when you right click the WT icon.
+Three ways to alter what your default profile will be. The default launch type is PowerShell. To set it to Debian, from within PowerShell `wsl -s Debian`. You can also set the `"defaultProfile"` attribute to the GUID value of the Unix install from within the Settings json configuration file. You can also set this through the GUI. Altering the order of the profile list (JSON method) will alter the order of your shell choices when you right click the WT icon.
 
   ###  My WT Settings 
-  * Launch your Debian instance via right-click on the Windows Terminal icon and choosing your Debian instance, *IF* you have launched it already for the first time. If you haven't, this won't show up as a launch item until you do it.
-  * `Ctrl-,` - Newer versions of Windows Terminal now has a built in GUI for configurations and you won't have to mess with the JSON unless you want to get super fancy. ![WindowsTerminalGUI](https://github.com/gclair/WSL2_4_nix_nerds/blob/main/WindowsTerminalConfiguration.png)
-  * Choose your font, font size, and set your default start directory will be the `c:\users\<username>\` directory. If you perfer good old fashioned `/home/<username>` then set it as per below. There are different ways fonts could be installed, either via `choco` or manually downloaded from [Nerd Fonts](https://www.nerdfonts.com). Make sure you have the correct font name by using the "Font" tool in the Start menu. You can put these in the `"default"` section of the `"profiles"`, or per profile. These examples are per profile and in the `"name":"Debian"` profile for myself. Order of attributes doesn't seem to matter. 
+  * Launch your Debian instance via right-click on the Windows Terminal icon and choosing your Debian instance, *IF* you have launched it already for the first time. If you haven't, this won't show up as a launch item until you do it. Clever method, I wonder why and how WT detects this.
+  * Choose your font, font size, and set your default start directory. The Default will be the `c:\users\<username>\` directory, I don't care for it. If you perfer good old fashioned `/home/<username>` then set it as per below. There are different ways fonts could be installed, either via `choco` or manually downloaded from [Nerd Fonts](https://www.nerdfonts.com). Make sure you have the correct font name by using the "Font" tool in the Start menu. You can put these in the `"default"` section of the `"profiles"`, or per profile. These examples are per profile and in the `"name":"Debian"` profile for myself. Order of attributes doesn't seem to matter. 
 ```
       "startingDirectory": "//wsl$//Debian//home//gclair",
       //"fontFace": "MesloLGS NF",
