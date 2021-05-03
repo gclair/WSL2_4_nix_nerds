@@ -52,7 +52,10 @@ A quickstart guide to getting Debian in WSL2 to an acceptable working state. If 
   * See the [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/global-settings) page for detailed customization options. This is where behaviour and look and feel (background images, transparency etc) are defined. The GUI doesn't show ALL options, so you may have to edit via JSON to change certain items such as the font.
   * Useful trick: If you have Windows Terminal running and while you have the configuration file open, when you save settings, Terminal will reload them right away and you can see what effect you've had on it right away.
 
-Three ways to alter what your default profile will be. The default launch type is PowerShell. To set it to Debian, from within PowerShell `wsl -s Debian`. You can also set the `"defaultProfile"` attribute to the GUID value of the Unix install from within the Settings json configuration file. You can also set this through the GUI. Altering the order of the profile list (JSON method) will alter the order of your shell choices when you right click the WT icon.
+Three ways to alter what your default profile will be. The default launch type is PowerShell. Example: To set it to Debian:
+* GUI: Easiest way, `Ctrl+,`; "Default Profile" dropdown, pick your poison.
+* PowerShell: `wsl -s Debian`. 
+* JSON: You can set the `"defaultProfile"` attribute to the GUID value of the Unix install from within the Settings json configuration file. Altering the order of the profile list (JSON method) will alter the order of your shell choices when you right click the WT icon.
 
   ###  My WT Settings 
   * Launch your Debian instance via right-click on the Windows Terminal icon and choosing your Debian instance, *IF* you have launched it already for the first time. If you haven't, this won't show up as a launch item until you do it. Clever method, I wonder why and how WT detects this.
