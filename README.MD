@@ -107,7 +107,7 @@ HOSTNAME is not set in WSL2, so if you don't change it often, hardcoding it will
  I am a user of [SpaceVim](https://spacevim.org). It looks pretty and works relatively well for me. I didn't have to do many changes here. If you're an experienced dev, you have all your customizations in your github ready to go. I, however, do not `¯\_(ツ)_/¯`
 
 # Tmux
-  This needs a section all its own, but if you got this far you know what you're doing.
+  This needs a section all its own, but if you got this far you know what you're doing. I started with a base usage of Gregory Pakosz's very excellent [Oh My Tmux](https://github.com/gpakosz/.tmux) config and altered via the .tmux.conf.local for my setup. 
   ## Terminal Setting
    I think the important part of tmux configuration is setting the terminal in your `~/.tmux.conf.local` OR `~/.tmux.conf` :   
     `set -g default-terminal "xterm-256color"` or to `"screen-256color"`. The xterm-256color seems to work for me.
